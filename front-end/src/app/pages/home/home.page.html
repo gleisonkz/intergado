@@ -1,0 +1,10 @@
+<div class="products">
+  <app-add-button (clickEvent)="add()">Produto</app-add-button>
+
+  <app-generic-table
+    (actionEvent)="handleActions($event)"
+    [tableData]="dataSource"
+    [itemsDisplayedColumns]="productColumns"
+  >
+  </app-generic-table>
+</div>
