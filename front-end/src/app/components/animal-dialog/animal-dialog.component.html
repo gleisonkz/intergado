@@ -1,1 +1,43 @@
-<p>animal-dialog works!</p>
+<form [formGroup]="form" novalidate>
+  <h1 mat-dialog-title>Animal</h1>
+
+  <mat-dialog-content>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Manejo"
+        formControlName="manejo"
+        autofocus
+        onFocus="this.select()"
+        (keyup.enter)="save()"
+      />
+      <mat-error>
+        <span showValidation="manejo"></span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Tag"
+        formControlName="tag"
+        (keyup.enter)="save()"
+      />
+      <mat-error>
+        <span showValidation="tag"></span>
+      </mat-error>
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button (click)="close()">Fechar</button>
+    <button
+      [disabled]="form.invalid"
+      [class.disabled]="form.invalid"
+      mat-raised-button
+      color="primary"
+      (click)="save()"
+    >
+      Salvar
+    </button>
+  </mat-dialog-actions>
+</form>

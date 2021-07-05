@@ -1,0 +1,17 @@
+@import "media";
+@import "variables";
+@import "mixins";
+@import "functions";
+
+mat-dialog-content {
+  display: grid;
+}
+
+mat-dialog-actions {
+  @include flex-center;
+  justify-content: flex-end;
+
+  button:first-of-type {
+    margin-right: rem(10);
+  }
+}
