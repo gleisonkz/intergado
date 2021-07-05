@@ -22,6 +22,7 @@ import { GenericTableComponent } from './components/generic-table/generic-table.
 import { HeaderComponent } from './components/header/header.component';
 import { AddButtonComponent } from './components/add-button/add-button.component';
 import { AnimalDialogComponent } from './components/animal-dialog/animal-dialog.component';
+import { HotToastModule } from '@ngneat/hot-toast';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { AnimalDialogComponent } from './components/animal-dialog/animal-dialog.
     ReactiveFormsModule,
     MatSortModule,
     MatDialogModule,
+    HotToastModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

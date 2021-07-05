@@ -1,0 +1,10 @@
+@import "colors";
+@import "variables";
+@import "mixins";
+
+main {
+  max-width: $global-max-width;
+  margin: 0 auto;
+  margin-top: rem(20);
+  padding: 0 rem(16);
+}

@@ -1,4 +1,9 @@
+@import "colors";
+@import "variables";
+@import "mixins";
+
 :host {
   display: grid;
   flex-direction: column;
+  max-width: $global-max-width;
 }

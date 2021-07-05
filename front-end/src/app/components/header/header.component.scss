@@ -10,7 +10,7 @@ $hover-color: #333;
   justify-content: center;
 
   background-color: $color-primary;
-  padding: 0 $global-horizontal-padding;
+  // padding: 0 $global-horizontal-padding;
 
   & > div {
     @include flex-center;
