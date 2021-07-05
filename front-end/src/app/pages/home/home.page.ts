@@ -1,20 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AnimalDialogComponent } from 'src/app/components/animal-dialog/animal-dialog.component';
 import { createMatDialogConfig } from 'src/app/functions/createMatDialogConfig';
 import { ActionEvent } from 'src/app/models/actions';
-import { Animal, ANIMALS } from 'src/app/models/animal';
+import { Animal } from 'src/app/models/animal';
 import { TableColumns } from 'src/app/models/table-columns';
+import { AnimalService } from 'src/app/services/animal.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage {
-  constructor(private dialogService: MatDialog) {}
+export class HomePage implements OnInit {
+  constructor(
+    private dialogService: MatDialog,
+    private animalService: AnimalService
+  ) {}
 
-  dataSource = ANIMALS;
+  ngOnInit(): void {
+    this.animalService
+      .getAnimals()
+      .subscribe((animals) => (this.dataSource = animals));
+  }
+
+  dataSource: Animal[];
   productColumns: TableColumns<Animal> = {
     id: '#',
     manejo: 'Manejo',

@@ -1,0 +1,7 @@
+@import "colors";
+@import "variables";
+@import "mixins";
+
+:host {
+  max-width: $global-max-width;
+}
