@@ -3,6 +3,8 @@ import { Observable, of } from 'rxjs';
 import { IAnimalService } from 'src/app/classes/service-token';
 import { Animal } from 'src/app/models/animal';
 
+const MOCK_ANIMALS = [{ id: 1, manejo: 'teste', tag: 'abc123' }];
+
 @Injectable({
   providedIn: 'root',
 })
@@ -10,7 +12,9 @@ export class AnimalStorageService implements IAnimalService {
   private readonly STORAGE_KEY = 'ANIMALS';
 
   constructor() {
-    this.animals = localStorage.getItem(this.STORAGE_KEY) ? this.animals : [];
+    this.animals = localStorage.getItem(this.STORAGE_KEY)
+      ? this.animals
+      : MOCK_ANIMALS;
   }
 
   postAnimal({ tag, manejo }: Animal): Observable<Animal> {
