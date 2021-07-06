@@ -41,19 +41,6 @@ export class AnimalDialogComponent implements OnInit {
       )
       .subscribe((animal) => this.dialogRef.close(animal));
   }
-  // this.data.quantity = +this.form.value.quantity;
-  // this.comicInventoryService
-  //   .putComicInventory(+this.data.comicID, this.form.value)
-  //   .pipe(
-  //     tap(() =>
-  //       this.notificationService.showMessage(
-  //         `O registro foi atualizado com sucesso!`
-  //       )
-  //     )
-  //   )
-  //   .subscribe((comicInventory: Animal) =>
-  //     this.dialogRef.close(comicInventory)
-  //   );
 
   close() {
     this.dialogRef.close();
