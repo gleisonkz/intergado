@@ -19,7 +19,7 @@ export class AnimalStorageService implements IAnimalService {
 
   postAnimal({ tag, manejo }: Animal): Observable<Animal> {
     const animals = this.animals;
-    const nextID = animals.sort((a, b) => b.id - a.id)[0].id + 1;
+    const nextID = animals.sort((a, b) => b.id - a.id)[0].id + 1 ?? 1;
     const newAnimal = { tag, manejo, id: nextID };
     this.animals = [...animals, newAnimal];
     return of(newAnimal);
