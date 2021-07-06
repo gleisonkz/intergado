@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Logo Angular" src="../.github/logo.jpeg" width="250px"/>
+  <img alt="Logo Angular" src=".github/logo.jpeg" width="250px"/>
 </p>
 
 <p align="center"> 
@@ -30,11 +30,11 @@
 
 <div align="center">
 
-Deploy do front-end efetuado no [Netlify](https://www.netlify.com/) para visualizar: [Clique Aqui](https://intergado.netlify.app/)
+Deploy do front-end efetuado no [Netlify](https://www.netlify.com/) para visualizar: [Clique Aqui](https://intergado.netlify.app/home)
 
-|                              :computer:Desktop                               |                               :iphone: Mobile                               |
-| :--------------------------------------------------------------------------: | :-------------------------------------------------------------------------: |
-| <kbd><img src="../.github/previews/desktop-preview.png" alt="Tablet"/></kbd> | <kbd><img src="../.github/previews/mobile-preview.png" alt="Mobile"/></kbd> |
+|                             :computer:Desktop                             |                             :iphone: Mobile                              |
+| :-----------------------------------------------------------------------: | :----------------------------------------------------------------------: |
+| <kbd><img src=".github/previews/desktop-preview.png" alt="Tablet"/></kbd> | <kbd><img src=".github/previews/mobile-preview.png" alt="Mobile"/></kbd> |
 
 </div>
   
