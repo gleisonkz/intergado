@@ -23,6 +23,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { AddButtonComponent } from './components/add-button/add-button.component';
 import { AnimalDialogComponent } from './components/animal-dialog/animal-dialog.component';
 import { HotToastModule } from '@ngneat/hot-toast';
+import { ShowValidationDirective } from './directives/show-validation.directive';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { HotToastModule } from '@ngneat/hot-toast';
     HomePage,
     AddButtonComponent,
     AnimalDialogComponent,
+    ShowValidationDirective,
   ],
   imports: [
     BrowserModule,

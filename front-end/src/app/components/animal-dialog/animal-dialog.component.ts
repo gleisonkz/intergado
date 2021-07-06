@@ -39,6 +39,7 @@ export class AnimalDialogComponent implements OnInit {
           )
         )
       )
+
       .subscribe((animal) => this.dialogRef.close(animal));
   }
   // this.data.quantity = +this.form.value.quantity;

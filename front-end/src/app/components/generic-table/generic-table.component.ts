@@ -12,11 +12,6 @@ export class GenericTableComponent<T> {
   @Output() actionEvent = new EventEmitter<ActionEvent<T>>();
   readonly defaultActions: ButtonAction[] = [
     {
-      buttonText: 'Editar',
-      eventName: 'edit',
-      iconName: 'edit',
-    },
-    {
       buttonText: 'Deletar',
       eventName: 'delete',
       iconName: 'delete',
