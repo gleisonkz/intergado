@@ -2,8 +2,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { tap } from 'rxjs/operators';
+import { IAnimalService, SERVICE_TOKEN } from 'src/app/classes/service-token';
 import { Animal } from 'src/app/models/animal';
-import { AnimalService } from 'src/app/services/animal.service';
 import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
@@ -17,7 +17,8 @@ export class AnimalDialogComponent implements OnInit {
 
   constructor(
     private dialogRef: MatDialogRef<AnimalDialogComponent>,
-    private animalService: AnimalService,
+    @Inject(SERVICE_TOKEN)
+    private animalService: IAnimalService,
     private notificationService: NotificationService,
     @Inject(MAT_DIALOG_DATA) private data: Animal
   ) {}

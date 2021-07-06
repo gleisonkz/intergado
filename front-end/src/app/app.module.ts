@@ -15,14 +15,20 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HotToastModule } from '@ngneat/hot-toast';
+import {
+  SERVICE_TOKEN,
+  tokenServiceFactory,
+} from 'src/app/classes/service-token';
 import { HomePage } from 'src/app/pages/home/home.page';
+import { AnimalStorageService } from 'src/app/services/animal-storage.service';
+import { AnimalService } from 'src/app/services/animal.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GenericTableComponent } from './components/generic-table/generic-table.component';
-import { HeaderComponent } from './components/header/header.component';
 import { AddButtonComponent } from './components/add-button/add-button.component';
 import { AnimalDialogComponent } from './components/animal-dialog/animal-dialog.component';
-import { HotToastModule } from '@ngneat/hot-toast';
+import { GenericTableComponent } from './components/generic-table/generic-table.component';
+import { HeaderComponent } from './components/header/header.component';
 import { ShowValidationDirective } from './directives/show-validation.directive';
 
 @NgModule({
@@ -55,7 +61,13 @@ import { ShowValidationDirective } from './directives/show-validation.directive'
     MatDialogModule,
     HotToastModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: SERVICE_TOKEN,
+      useFactory: tokenServiceFactory,
+      deps: [AnimalStorageService, AnimalService],
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
