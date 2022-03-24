@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ActionEvent, ButtonAction } from 'src/app/models/actions';
+
+import { ActionEvent, ButtonAction } from '@gd/models';
 
 @Component({
   selector: 'app-generic-table',

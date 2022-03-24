@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o",
     "server": "java -jar ../back-end/crud-back.jar",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",

@@ -1,13 +1,12 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { switchMap, tap } from 'rxjs/operators';
-import { IAnimalService, SERVICE_TOKEN } from 'src/app/classes/service-token';
-import { AnimalDialogComponent } from 'src/app/components/animal-dialog/animal-dialog.component';
-import { createMatDialogConfig } from 'src/app/functions/createMatDialogConfig';
-import { ActionEvent } from 'src/app/models/actions';
-import { Animal } from 'src/app/models/animal';
-import { TableColumns } from 'src/app/models/table-columns';
-import { NotificationService } from 'src/app/services/notification.service';
+
+import { IAnimalService, SERVICE_TOKEN } from '@gd/classes';
+import { AnimalDialogComponent } from '@gd/components';
+import { createMatDialogConfig } from '@gd/functions';
+import { ActionEvent, Animal, TableColumns } from '@gd/models';
+import { NotificationService } from '@gd/services';
 
 @Component({
   selector: 'app-home',

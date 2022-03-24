@@ -1,11 +1,7 @@
 import { AfterContentInit, Directive, ElementRef, Input } from '@angular/core';
-import {
-  AbstractControl,
-  ControlContainer,
-  FormControl,
-  FormGroup,
-} from '@angular/forms';
-import { VALIDATIONS } from 'src/app/directives/validations';
+import { AbstractControl, ControlContainer, FormControl, FormGroup } from '@angular/forms';
+
+import { VALIDATIONS } from './validations';
 
 @Directive({
   selector: '[showValidation]',

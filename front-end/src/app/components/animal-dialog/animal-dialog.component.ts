@@ -1,10 +1,11 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { tap } from 'rxjs/operators';
-import { IAnimalService, SERVICE_TOKEN } from 'src/app/classes/service-token';
-import { Animal } from 'src/app/models/animal';
-import { NotificationService } from 'src/app/services/notification.service';
+
+import { IAnimalService, SERVICE_TOKEN } from '@gd/classes';
+import { Animal } from '@gd/models';
+import { NotificationService } from '@gd/services';
 
 @Component({
   selector: 'app-animal-dialog',

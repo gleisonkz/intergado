@@ -15,21 +15,19 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { HotToastModule } from '@ngneat/hot-toast';
+
+import { SERVICE_TOKEN, tokenServiceFactory } from '@gd/classes';
 import {
-  SERVICE_TOKEN,
-  tokenServiceFactory,
-} from 'src/app/classes/service-token';
-import { HomePage } from 'src/app/pages/home/home.page';
-import { AnimalStorageService } from 'src/app/services/animal-storage.service';
-import { AnimalService } from 'src/app/services/animal.service';
+    AddButtonComponent, AnimalDialogComponent, GenericTableComponent, HeaderComponent
+} from '@gd/components';
+import { ShowValidationDirective } from '@gd/directives';
+import { HomePage } from '@gd/pages';
+import { AnimalService, AnimalStorageService } from '@gd/services';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddButtonComponent } from './components/add-button/add-button.component';
-import { AnimalDialogComponent } from './components/animal-dialog/animal-dialog.component';
-import { GenericTableComponent } from './components/generic-table/generic-table.component';
-import { HeaderComponent } from './components/header/header.component';
-import { ShowValidationDirective } from './directives/show-validation.directive';
 
 @NgModule({
   declarations: [

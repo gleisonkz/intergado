@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { IAnimalService } from 'src/app/classes/service-token';
-import { Animal } from 'src/app/models/animal';
+
+import { IAnimalService } from '@gd/classes';
+import { Animal } from '@gd/models';
 
 const MOCK_ANIMALS = [{ id: 1, manejo: 'teste', tag: 'abc123' }];
 

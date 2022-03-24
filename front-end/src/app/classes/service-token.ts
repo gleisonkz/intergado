@@ -1,9 +1,9 @@
 import { InjectionToken } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Animal } from 'src/app/models/animal';
-import { AnimalStorageService } from 'src/app/services/animal-storage.service';
-import { AnimalService } from 'src/app/services/animal.service';
-import { environment } from 'src/environments/environment';
+
+import { environment } from '@gd/env';
+import { Animal } from '@gd/models';
+import { AnimalService, AnimalStorageService } from '@gd/services';
 
 export interface IAnimalService {
   postAnimal({ tag, manejo }: Animal): Observable<Animal>;
@@ -16,6 +16,8 @@ export function tokenServiceFactory(
   storage: AnimalStorageService,
   service: AnimalService
 ) {
+  return storage;
+
   if (environment.production) {
     return storage;
   }

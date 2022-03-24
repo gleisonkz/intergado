@@ -1,6 +1,22 @@
 {
-    "cSpell.words": [
-        "Intergados",
-        "intergado"
-    ]
+  "cSpell.words": ["Intergados", "intergado"],
+  "importSorter.sortConfiguration.customOrderingRules.rules": [
+    {
+      "regex": "^@angular|^rxjs",
+      "orderLevel": 5
+    },
+    {
+      "regex": "^@ngneat",
+      "orderLevel": 10
+    },
+    {
+      "regex": "^@gd",
+      "orderLevel": 15
+    },
+    {
+      "regex": "^[.]",
+      "orderLevel": 20
+    },
+    30
+  ]
 }
