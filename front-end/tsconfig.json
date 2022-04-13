@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "types": ["cypress", "mocha", "node"],
+    "types": ["cypress", "@testing-library/jasmine-dom", "node"],
     "strictPropertyInitialization": false,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

@@ -45,6 +45,8 @@
     "@angular/cli": "~13.3.0",
     "@angular/compiler-cli": "~13.3.0",
     "@cypress/schematic": "^1.6.0",
+    "@testing-library/angular": "^11.0.4",
+    "@testing-library/jasmine-dom": "^1.2.0",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "5.11.0",
