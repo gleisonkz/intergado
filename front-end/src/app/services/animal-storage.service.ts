@@ -4,8 +4,6 @@ import { Observable, of } from 'rxjs';
 import { IAnimalService } from '@gd/classes';
 import { Animal } from '@gd/models';
 
-const MOCK_ANIMALS = [{ id: 1, manejo: 'teste', tag: 'abc123' }];
-
 @Injectable({
   providedIn: 'root',
 })
@@ -13,9 +11,7 @@ export class AnimalStorageService implements IAnimalService {
   private readonly STORAGE_KEY = 'ANIMALS';
 
   constructor() {
-    this.animals = localStorage.getItem(this.STORAGE_KEY)
-      ? this.animals
-      : MOCK_ANIMALS;
+    this.animals = localStorage.getItem(this.STORAGE_KEY) ? this.animals : [];
   }
 
   postAnimal({ tag, manejo }: Animal): Observable<Animal> {
@@ -40,8 +36,7 @@ export class AnimalStorageService implements IAnimalService {
   deleteAnimal(id: number): Observable<Animal> {
     const animals = this.animals;
     const foundAnimal = animals.find((animal) => animal.id === id);
-    if (foundAnimal == undefined)
-      throw new Error(`Não existe um animal com o ID: ${id} `);
+    if (foundAnimal == undefined) throw new Error(`Não existe um animal com o ID: ${id} `);
 
     this.animals = animals.filter((animal) => animal !== foundAnimal);
     return of(foundAnimal);

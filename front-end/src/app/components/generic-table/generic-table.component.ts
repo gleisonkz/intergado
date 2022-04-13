@@ -20,6 +20,7 @@ export class GenericTableComponent<T> {
 
   @Input() hasDefaultActions = true;
   @Input() tableData: T[];
+  @Input() noDataMessage: string;
   @Output() actionEvent = new EventEmitter<ActionEvent<T>>();
 
   @Input()

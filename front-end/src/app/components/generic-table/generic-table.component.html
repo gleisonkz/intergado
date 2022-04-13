@@ -20,9 +20,7 @@
         <button
           *ngFor="let action of actions"
           mat-menu-item
-          (click)="
-            actionEvent.emit({ item: element, eventName: action.eventName })
-          "
+          (click)="actionEvent.emit({ item: element, eventName: action.eventName })"
         >
           <mat-icon class="menu-icon">{{ action.iconName }}</mat-icon>
           <span>{{ action.buttonText }}</span>
@@ -32,8 +30,14 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="objectKeys(itemsDisplayedColumns)"></tr>
-  <tr
-    mat-row
-    *matRowDef="let row; columns: objectKeys(itemsDisplayedColumns)"
-  ></tr>
+  <tr mat-row *matRowDef="let row; columns: objectKeys(itemsDisplayedColumns)"></tr>
+  <tr class="mat-row no-data" *matNoDataRow>
+    <td
+      data-testid="generic-table-no-data"
+      class="mat-cell"
+      [attr.colspan]="objectKeys(itemsDisplayedColumns).length"
+    >
+      {{ noDataMessage }}
+    </td>
+  </tr>
 </table>

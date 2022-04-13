@@ -1,7 +1,7 @@
-@import "colors";
-@import "variables";
-@import "mixins";
-@import "functions";
+@import 'colors';
+@import 'variables';
+@import 'mixins';
+@import 'functions';
 
 table {
   border-top: 1px solid #dee2e6;
@@ -24,4 +24,8 @@ table {
 
 .menu-icon {
   color: black;
+}
+
+.no-data {
+  text-align: center;
 }

@@ -5,7 +5,7 @@ import { switchMap, tap } from 'rxjs/operators';
 import { IAnimalService, SERVICE_TOKEN } from '@gd/classes';
 import { AnimalDialogComponent } from '@gd/components';
 import { createMatDialogConfig } from '@gd/functions';
-import { ActionEvent, Animal, TableColumns } from '@gd/models';
+import { ActionEvent, Animal, NO_ANIMALS_MESSAGE, TableColumns } from '@gd/models';
 import { NotificationService } from '@gd/services';
 
 @Component({
@@ -13,6 +13,7 @@ import { NotificationService } from '@gd/services';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  readonly NO_ANIMALS_MESSAGE = NO_ANIMALS_MESSAGE;
   dataSource: Animal[];
   productColumns: TableColumns<Animal> = {
     id: '#',
