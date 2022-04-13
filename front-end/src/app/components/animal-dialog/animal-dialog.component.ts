@@ -8,7 +8,6 @@ import { Animal } from '@gd/models';
 import { NotificationService } from '@gd/services';
 
 @Component({
-  selector: 'app-animal-dialog',
   templateUrl: './animal-dialog.component.html',
   styleUrls: ['./animal-dialog.component.scss'],
 })
@@ -17,11 +16,12 @@ export class AnimalDialogComponent implements OnInit {
   id: number;
 
   constructor(
-    private dialogRef: MatDialogRef<AnimalDialogComponent>,
     @Inject(SERVICE_TOKEN)
-    private animalService: IAnimalService,
-    private notificationService: NotificationService,
-    @Inject(MAT_DIALOG_DATA) private data: Animal
+    private readonly animalService: IAnimalService,
+    @Inject(MAT_DIALOG_DATA)
+    private readonly data: Animal,
+    private readonly notificationService: NotificationService,
+    private readonly dialogRef: MatDialogRef<AnimalDialogComponent>
   ) {}
 
   ngOnInit(): void {
@@ -34,13 +34,7 @@ export class AnimalDialogComponent implements OnInit {
   save() {
     this.animalService
       .postAnimal(this.form.value)
-      .pipe(
-        tap(() =>
-          this.notificationService.showMessage(
-            `O registro foi criado com sucesso!`
-          )
-        )
-      )
+      .pipe(tap(() => this.notificationService.showMessage(`O registro foi criado com sucesso!`)))
 
       .subscribe((animal) => this.dialogRef.close(animal));
   }

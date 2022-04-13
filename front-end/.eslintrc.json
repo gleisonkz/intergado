@@ -1,0 +1,77 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": ["plugin:@angular-eslint/recommended", "plugin:@angular-eslint/template/process-inline-templates"],
+      "rules": {
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "gd",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "gd",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/component-class-suffix": [
+          "error",
+          {
+            "suffixes": ["Page", "Component"]
+          }
+        ],
+        "@typescript-eslint/member-ordering": [
+          "error",
+          {
+            "default": {
+              "memberTypes": [
+                "public-static-field",
+                "protected-static-field",
+                "public-instance-field",
+                "public-decorated-field",
+                "public-abstract-field",
+                "protected-instance-field",
+                "protected-decorated-field",
+                "protected-abstract-field",
+                "private-instance-field",
+                "private-decorated-field",
+                "private-abstract-field",
+                "static-field",
+                "public-field",
+                "instance-field",
+                "protected-field",
+                "abstract-field",
+                "private-field",
+                "private-static-field",
+                "constructor",
+                "public-static-method",
+                "protected-static-method",
+                "public-method",
+                "protected-method",
+                "private-method",
+                "private-static-method"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {}
+    }
+  ]
+}

@@ -3,21 +3,24 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ActionEvent, ButtonAction } from '@gd/models';
 
 @Component({
-  selector: 'app-generic-table',
+  selector: 'gd-generic-table',
   templateUrl: './generic-table.component.html',
   styleUrls: ['./generic-table.component.scss'],
 })
 export class GenericTableComponent<T> {
-  @Input() hasDefaultActions = true;
-  @Input() tableData: T[];
-  @Output() actionEvent = new EventEmitter<ActionEvent<T>>();
-  readonly defaultActions: ButtonAction[] = [
+  readonly DEFAULT_ACTIONS: ButtonAction[] = [
     {
       buttonText: 'Deletar',
       eventName: 'delete',
       iconName: 'delete',
     },
   ];
+
+  objectKeys = Object.keys;
+
+  @Input() hasDefaultActions = true;
+  @Input() tableData: T[];
+  @Output() actionEvent = new EventEmitter<ActionEvent<T>>();
 
   @Input()
   set itemsDisplayedColumns(items: any) {
@@ -35,21 +38,14 @@ export class GenericTableComponent<T> {
     this._actions = items;
   }
   get actions(): ButtonAction[] {
-    const actions = [
-      ...((this.hasDefaultActions && this.defaultActions) || []),
-      ...(this._actions || []),
-    ];
+    const actions = [...((this.hasDefaultActions && this.DEFAULT_ACTIONS) || []), ...(this._actions || [])];
     return actions;
   }
 
   get columnsWithoutActions(): string[] {
-    return this.objectKeys(this.itemsDisplayedColumns).filter(
-      (c) => c !== 'actions'
-    );
+    return this.objectKeys(this.itemsDisplayedColumns).filter((c) => c !== 'actions');
   }
 
   private _actions: ButtonAction[] = [];
   private _itemsDisplayedColumns: any;
-
-  objectKeys = Object.keys;
 }

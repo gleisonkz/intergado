@@ -4,15 +4,12 @@ import { AbstractControl, ControlContainer, FormControl, FormGroup } from '@angu
 import { VALIDATIONS } from './validations';
 
 @Directive({
-  selector: '[showValidation]',
+  selector: '[gdShowValidation]',
 })
 export class ShowValidationDirective implements AfterContentInit {
-  @Input('showValidation') controlName: string;
+  @Input('gdShowValidation') controlName: string;
 
-  constructor(
-    private elementRef: ElementRef,
-    private container: ControlContainer
-  ) {}
+  constructor(private elementRef: ElementRef, private container: ControlContainer) {}
 
   ngAfterContentInit(): void {
     const formGroup = this.container.control as FormGroup;
@@ -34,10 +31,6 @@ export class ShowValidationDirective implements AfterContentInit {
   }
 
   private getErrorMessage(control: AbstractControl): string {
-    return (
-      VALIDATIONS.find((validationObj) =>
-        control.hasError(validationObj.errorName)
-      )?.messageFn(control) || ''
-    );
+    return VALIDATIONS.find((validationObj) => control.hasError(validationObj.errorName))?.messageFn(control) || '';
   }
 }

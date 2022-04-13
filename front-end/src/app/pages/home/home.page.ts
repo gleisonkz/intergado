@@ -9,11 +9,17 @@ import { ActionEvent, Animal, TableColumns } from '@gd/models';
 import { NotificationService } from '@gd/services';
 
 @Component({
-  selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  dataSource: Animal[];
+  productColumns: TableColumns<Animal> = {
+    id: '#',
+    manejo: 'Manejo',
+    tag: 'Tag',
+  };
+
   constructor(
     private dialogService: MatDialog,
     @Inject(SERVICE_TOKEN)
@@ -22,17 +28,8 @@ export class HomePage implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.animalService
-      .getAnimals()
-      .subscribe((animals) => (this.dataSource = animals));
+    this.animalService.getAnimals().subscribe((animals) => (this.dataSource = animals));
   }
-
-  dataSource: Animal[];
-  productColumns: TableColumns<Animal> = {
-    id: '#',
-    manejo: 'Manejo',
-    tag: 'Tag',
-  };
 
   handleActions(actionEvent: ActionEvent<Animal>) {
     switch (actionEvent.eventName) {
@@ -49,10 +46,7 @@ export class HomePage implements OnInit {
   }
 
   add(animal?: Animal) {
-    const ref = this.dialogService.open(
-      AnimalDialogComponent,
-      createMatDialogConfig({ data: animal })
-    );
+    const ref = this.dialogService.open(AnimalDialogComponent, createMatDialogConfig({ data: animal }));
 
     ref
       .afterClosed()

@@ -7,12 +7,12 @@ export interface IMatDialogConfig<T> {
   hasBackdrop: boolean;
 }
 
-export function createMatDialogConfig<T>({
+export const createMatDialogConfig = <T>({
   data = null,
   disableClose = true,
   autoFocus = true,
   hasBackdrop = true,
-}: Partial<IMatDialogConfig<T>>): MatDialogConfig<T> {
+}: Partial<IMatDialogConfig<T>>) => {
   const dialogConfig = new MatDialogConfig<T>();
 
   dialogConfig.disableClose = disableClose;
@@ -20,4 +20,4 @@ export function createMatDialogConfig<T>({
   dialogConfig.hasBackdrop = hasBackdrop;
   dialogConfig.data = data;
   return dialogConfig;
-}
+};

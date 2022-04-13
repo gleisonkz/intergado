@@ -1,10 +1,10 @@
 <div>
-  <app-add-button (clickEvent)="add()">Item</app-add-button>
+  <gd-add-button (clickEvent)="add()">Item</gd-add-button>
 
-  <app-generic-table
+  <gd-generic-table
     (actionEvent)="handleActions($event)"
     [tableData]="dataSource"
     [itemsDisplayedColumns]="productColumns"
   >
-  </app-generic-table>
+  </gd-generic-table>
 </div>

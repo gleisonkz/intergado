@@ -12,18 +12,13 @@
         (keyup.enter)="save()"
       />
       <mat-error>
-        <span showValidation="manejo"></span>
+        <span gdShowValidation="manejo"></span>
       </mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input
-        matInput
-        placeholder="Tag"
-        formControlName="tag"
-        (keyup.enter)="save()"
-      />
+      <input matInput placeholder="Tag" formControlName="tag" (keyup.enter)="save()" />
       <mat-error>
-        <span showValidation="tag"></span>
+        <span gdShowValidation="tag"></span>
       </mat-error>
     </mat-form-field>
   </mat-dialog-content>
