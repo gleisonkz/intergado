@@ -1,6 +1,10 @@
 {
   "name": "intergado",
   "version": "0.0.0",
+  "homepage": "https://github.com/gleisonkz/intergado",
+  "repository": {
+    "type": "git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
