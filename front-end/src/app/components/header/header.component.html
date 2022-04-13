@@ -1,18 +1,33 @@
 <mat-toolbar class="header mat-elevation-z4">
   <ul>
     <li>
-      <a routerLink="/home">
-        <img src="assets/images/zoology.svg" class="logo" alt="logo" />
+      <a data-testid="logo-link" routerLink="/home">
+        <img
+          data-testid="logo"
+          src="assets/images/zoology.svg"
+          class="logo"
+          alt="Logo com um desenho de um boi azul"
+        />
       </a>
       <span data-testid="header-title">Intergados</span>
     </li>
     <li>
-      <a class="header__link" mat-button routerLink="/home" routerLinkActive="active"
+      <a
+        data-testid="home-link"
+        class="header__link"
+        mat-button
+        routerLink="/home"
+        routerLinkActive="active"
         >Inicio</a
       >
     </li>
     <li>
-      <a class="header__link" mat-button routerLink="/about" routerLinkActive="active"
+      <a
+        data-testid="about-link"
+        class="header__link"
+        mat-button
+        routerLink="/about"
+        routerLinkActive="active"
         >Sobre</a
       >
     </li>
