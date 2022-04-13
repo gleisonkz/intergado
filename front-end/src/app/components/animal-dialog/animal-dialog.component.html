@@ -1,5 +1,5 @@
 <form [formGroup]="form" novalidate>
-  <h1 mat-dialog-title>Animal</h1>
+  <h1 mat-dialog-title>Novo Animal</h1>
 
   <mat-dialog-content>
     <mat-form-field>
@@ -10,13 +10,20 @@
         autofocus
         onFocus="this.select()"
         (keyup.enter)="save()"
+        data-testid="manejo-input"
       />
       <mat-error>
         <span gdShowValidation="manejo"></span>
       </mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Tag" formControlName="tag" (keyup.enter)="save()" />
+      <input
+        data-testid="tag-input"
+        matInput
+        placeholder="Tag"
+        formControlName="tag"
+        (keyup.enter)="save()"
+      />
       <mat-error>
         <span gdShowValidation="tag"></span>
       </mat-error>
@@ -24,8 +31,9 @@
   </mat-dialog-content>
 
   <mat-dialog-actions>
-    <button mat-raised-button (click)="close()">Fechar</button>
+    <button data-testid="close-button" mat-raised-button (click)="close()">Fechar</button>
     <button
+      data-testid="save-button"
       [disabled]="form.invalid"
       [class.disabled]="form.invalid"
       mat-raised-button
